@@ -241,8 +241,6 @@
         self.driver.add_cookie(cookie)
     ```    
   
-  
-  
-         
+     
                         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
