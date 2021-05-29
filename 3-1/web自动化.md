@@ -240,7 +240,7 @@
     for cookie in cookies:
         self.driver.add_cookie(cookie)
     ```    
-  
+ 
      
                         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
