@@ -16,11 +16,12 @@ class BasePage():
 			chrome_arg = webdriver.ChromeOptions()
 			chrome_arg.debugger_address = '127.0.0.1:9222'
 			self.driver = webdriver.Chrome(options=chrome_arg)
+			# 打开首页
 			self.driver.get(self.base_url)
 		else:
 			# 添加一个WebDriver类型注解，解决类型提示的问题
 			self.driver:WebDriver = best_driver
-		# 打开首页
+
 
 		self.driver.implicitly_wait(5)
 

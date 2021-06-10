@@ -16,7 +16,7 @@ class MainPage(BasePage):
 		跳转到通讯录页面
 		:return:返回通讯录页面实例
 		'''
-		return ContactPage(self.driver)
+		return
 
 	def goto_add_member(self):
 		'''
@@ -26,7 +26,7 @@ class MainPage(BasePage):
 
 		# 点击添加成员跳转到添加成员页
 		self.driver.find_element(By.CSS_SELECTOR,".ww_indexImg_AddMember").click()
-		return AddMemberPage(self.driver)
+		return
 
 
 
