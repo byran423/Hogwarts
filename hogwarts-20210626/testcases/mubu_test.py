@@ -6,8 +6,11 @@ from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
 
 
 class TestCaseMubu(HttpRunner):
-
-    config = Config("testcase description").verify(False)
+    config = (
+        Config("testcase description")
+        .variables(**{"memberId": "433746469027333"})
+        .verify(False)
+    )
 
     teststeps = [
         Step(
@@ -522,7 +525,7 @@ class TestCaseMubu(HttpRunner):
             )
             .with_json({"folderId": "0", "type": 0})
             .extract()
-            .with_jmespath("body.data.id","docID")
+            .with_jmespath("body.data.id", "docID")
             .validate()
             .assert_equal("status_code", 200)
         ),
@@ -637,7 +640,7 @@ class TestCaseMubu(HttpRunner):
                 {
                     "reqId": "1",
                     "type": "USER_HEARTBEAT",
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "documentId": "${docID}",
                 }
             )
@@ -715,7 +718,7 @@ class TestCaseMubu(HttpRunner):
                     "content-type": "application/json;charset=UTF-8",
                     "accept": "application/json, text/plain, */*",
                     "jwt-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJhcHAiOiJtdWJ1Iiwic3ViIjoiMTI0ODM3NTAiLCJsb2dpblR5cGUiOiJtb2JpbGUiLCJleHAiOjE2MjcyODUzNTAsImlhdCI6MTYyNDY5MzM1MH0.nkSri2w5s6LEyt7LQUy7_1IQEF92OWq4jpg_cjgkMUPEewkAFPIfAsU6sCxUWXWjbC-P2TRfU421cxC1Gj1ycw",
-                    "request-id": "members:433746469027333:1624693357557",
+                    "request-id": "members:${memberId}:1624693357557",
                     "x-request-id": "233d1d0d-e144-413c-8324-abaeb76f911f",
                     "origin": "https://mubu.com",
                     "sec-fetch-site": "same-site",
@@ -726,7 +729,7 @@ class TestCaseMubu(HttpRunner):
                     "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
                 }
             )
-            .with_json({"memberId": "433746469027333", "documentId": "${docID}"})
+            .with_json({"memberId": "${memberId}", "documentId": "${docID}"})
             .validate()
             .assert_equal("status_code", 200)
         ),
@@ -757,7 +760,7 @@ class TestCaseMubu(HttpRunner):
             .with_json(
                 {
                     "reqId": "2",
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CURSOR",
                     "documentId": "${docID}",
                     "cursor": {
@@ -800,7 +803,7 @@ class TestCaseMubu(HttpRunner):
             .with_json(
                 {
                     "reqId": "3",
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CURSOR",
                     "documentId": "${docID}",
                     "cursor": {
@@ -842,7 +845,7 @@ class TestCaseMubu(HttpRunner):
             )
             .with_json(
                 {
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CHANGE",
                     "version": 0,
                     "documentId": "${docID}",
@@ -881,7 +884,7 @@ class TestCaseMubu(HttpRunner):
             )
             .with_json(
                 {
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CHANGE",
                     "version": 1,
                     "documentId": "${docID}",
@@ -921,7 +924,7 @@ class TestCaseMubu(HttpRunner):
             .with_json(
                 {
                     "reqId": "4",
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CURSOR",
                     "documentId": "${docID}",
                     "cursor": {
@@ -991,7 +994,7 @@ class TestCaseMubu(HttpRunner):
             )
             .with_json(
                 {
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CHANGE",
                     "version": 2,
                     "documentId": "${docID}",
@@ -1044,7 +1047,7 @@ class TestCaseMubu(HttpRunner):
             )
             .with_json(
                 {
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CHANGE",
                     "version": 3,
                     "documentId": "${docID}",
@@ -1099,7 +1102,7 @@ class TestCaseMubu(HttpRunner):
             )
             .with_json(
                 {
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CHANGE",
                     "version": 4,
                     "documentId": "${docID}",
@@ -1152,7 +1155,7 @@ class TestCaseMubu(HttpRunner):
             )
             .with_json(
                 {
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "type": "CHANGE",
                     "version": 5,
                     "documentId": "${docID}",
@@ -1209,7 +1212,7 @@ class TestCaseMubu(HttpRunner):
                 {
                     "reqId": "11",
                     "type": "UNWATCH",
-                    "memberId": "433746469027333",
+                    "memberId": "${memberId}",
                     "documentId": "${docID}",
                 }
             )
