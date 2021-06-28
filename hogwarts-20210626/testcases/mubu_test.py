@@ -129,6 +129,7 @@ class TestCaseMubu(HttpRunner):
         ),
         Step(
             RunRequest("/v3/api/user/phone_login")
+            .with_variables(**{"callbackType": 0})
             .post("https://api2.$host/v3/api/user/phone_login")
             .with_headers(
                 **{
@@ -152,7 +153,13 @@ class TestCaseMubu(HttpRunner):
                     "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
                 }
             )
-            .with_json({"phone": "$phone", "password": "$password", "callbackType": 0})
+            .with_json(
+                {
+                    "phone": "$phone",
+                    "password": "$password",
+                    "callbackType": "$callbackType",
+                }
+            )
             .validate()
             .assert_equal("status_code", 200)
         ),
@@ -451,8 +458,10 @@ class TestCaseMubu(HttpRunner):
                 }
             )
             .with_json({"folderId": 0, "source": "home"})
+            .teardown_hook("${get_folders_num($response)}", "folders_num")
             .validate()
             .assert_equal("status_code", 200)
+            .assert_greater_or_equals("$folders_num", 0)
         ),
         Step(
             RunRequest("/v3/api/notify/new_tip/get")
