@@ -3,7 +3,7 @@
 
 
 from httprunner import HttpRunner, Config, Step, RunRequest, RunTestCase
-from mubulogin_test import TestCaseMubuLogin as MubuLogin
+from mubuLogin_test import TestCaseMubuLogin as MubuLogin
 
 
 class TestCaseMubu(HttpRunner):
