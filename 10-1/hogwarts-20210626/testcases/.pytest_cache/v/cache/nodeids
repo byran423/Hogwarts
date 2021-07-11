@@ -1,0 +1,5 @@
+[
+  "mubu_test.py::TestCaseMubu::test_start",
+  "mubuCreateDoc_test.py::TestCaseMubu::test_start[param0]",
+  "mubuCreateDoc_test.py::TestCaseMubu::test_start[param1]"
+]
