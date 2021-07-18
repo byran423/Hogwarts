@@ -29,6 +29,9 @@ export default {
       }
       this.$api.user.signIn(post_data).then(res => {
         console.log(res)
+        localStorage.setItem('token',res.data.data.token)
+        localStorage.setItem('userName',this.userName)
+        this.$router.push({name:'Case'})
       })
     }
   }

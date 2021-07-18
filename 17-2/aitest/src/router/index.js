@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import SignIn from '../components/SignIn.vue'
 import SignUp from '../components/Signup.vue'
+import Case from '../components/Case.vue'
+import Jenkins from '../components/Jenkins.vue'
+import Task from '../components/Task.vue'
+import Report from '../components/Report.vue'
 
 Vue.use(VueRouter)
 
@@ -29,7 +33,27 @@ const routes = [
     path: '/sign-up',
     name: 'SignUp',
     component: SignUp
-  }
+  },
+  {
+    path: '/case',
+    name: 'Case',
+    component: Case
+  },
+  {
+    path: '/jinkins',
+    name: 'Jenkins',
+    component: Jenkins
+  },
+  {
+    path: '/task',
+    name: 'Task',
+    component: Task
+  },
+  {
+    path: '/report',
+    name: 'Report',
+    component: Report
+  },
 ]
 
 const router = new VueRouter({
