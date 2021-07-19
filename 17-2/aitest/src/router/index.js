@@ -8,6 +8,15 @@ import Jenkins from '../components/Jenkins.vue'
 import Task from '../components/Task.vue'
 import Report from '../components/Report.vue'
 
+
+// 解决tab页面自我跳转报错
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location){
+  return originalPush.call(this,location).catch(err => err)
+}
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,7 +49,7 @@ const routes = [
     component: Case
   },
   {
-    path: '/jinkins',
+    path: '/jenkins',
     name: 'Jenkins',
     component: Jenkins
   },
