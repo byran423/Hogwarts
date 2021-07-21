@@ -1,7 +1,9 @@
 import user from './user'
+import cases from './case'
 
 const api = {
-  user
+  user,
+  cases
 }
 
 export default api
