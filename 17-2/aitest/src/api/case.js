@@ -8,8 +8,21 @@ const cases = {
         return axios.post('/testCase/text', params)
     },
     createCaseByFile(params){
-        return axios.post('/testCase/file', params)
+        return axios('/testCase/file',{
+            method:'post',
+            data:params,
+            headers:{'Content-type':'multipart/form-data'}
+        })
     },
+    editCase(params){
+        return axios.put('/testCase/',params)
+    },
+    deleteCase(params){
+        return axios.delete('/testCase/'+params.caseId, params)
+    },
+    creatTask(params){
+        return axios.post('/task',params)
+    }
 }
 
 export default cases
