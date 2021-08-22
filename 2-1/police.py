@@ -7,13 +7,13 @@ class Police(Hero):
 	hp = 1800
 	power = 195
 
+def test_hero():
+	police = Police()
+	timo = Timo()
 
-police = Police()
-timo = Timo()
-
-timo.fight(police.name,police.hp,police.power)
-timo.speak_lines()
-police.speak_lines()
+	timo.fight(police.name,police.hp,police.power)
+	timo.speak_lines()
+	police.speak_lines()
 
 
 
