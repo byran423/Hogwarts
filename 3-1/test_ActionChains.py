@@ -17,9 +17,9 @@ class TestActionChains():
 
 	def test_click(self):
 		self.driver.get('http://sahitest.com/demo/clicks.htm')
-		element_click = self.driver.find_element(By.XPATH,'//input[@value="click me"]')
-		element_double_click = self.driver.find_element(By.XPATH,'//input[@value="dbl click me"]')
-		element_right_click = self.driver.find_element(By.XPATH,'//input[@value="right click me"]')
+		element_click = self.driver.find_element(By.XPATH, '//input[@value="click me"]')
+		element_double_click = self.driver.find_element(By.XPATH, '//input[@value="dbl click me"]')
+		element_right_click = self.driver.find_element(By.XPATH, '//input[@value="right click me"]')
 		action = ActionChains(self.driver)
 		action.click(element_click)
 		sleep(1)
@@ -30,9 +30,9 @@ class TestActionChains():
 		action.perform()
 		sleep(3)
 
-	def	test_move(self):
+	def test_move(self):
 		self.driver.get('http://www.baidu.com')
-		ele = self.driver.find_element(By.XPATH,'//*[@id="s-usersetting-top"]')
+		ele = self.driver.find_element(By.XPATH, '//*[@id="s-usersetting-top"]')
 		action = ActionChains(self.driver)
 		action.move_to_element(ele)
 		action.perform()
@@ -40,7 +40,7 @@ class TestActionChains():
 
 	def test_dragdrop(self):
 		self.driver.get('http://sahitest.com/demo/dragDropMooTools.htm')
-		drag_ele = self.driver.find_element(By.XPATH,'//*[@id="dragger"]')
+		drag_ele = self.driver.find_element(By.XPATH, '//*[@id="dragger"]')
 		drop_ele = self.driver.find_element_by_xpath('/html/body/div[2]')
 
 		action = ActionChains(self.driver)
@@ -60,17 +60,3 @@ class TestActionChains():
 		actions.send_keys("tom")
 		actions.send_keys(Keys.BACK_SPACE).pause(1).perform()
 		sleep(3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-

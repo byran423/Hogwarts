@@ -19,12 +19,8 @@ class TestWorkWeChat():
 		self.driver.implicitly_wait(10)
 		self.driver.maximize_window()
 
-
-
-
 	def teardown(self):
 		self.driver.quit()
-
 
 	def test_WrokWeChatLogin(self):
 		self.driver.get('https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome')
@@ -43,7 +39,6 @@ class TestWorkWeChat():
 		#
 		# assert "咩咩羊" == self.driver.find_element_by_class_name('index_info_name').text
 
-
 		# 新建一个小数据库
 		db = shelve.open('./mydbs/cookies')
 		# # sleep(3)
@@ -58,13 +53,3 @@ class TestWorkWeChat():
 		self.driver.get('https://work.weixin.qq.com/wework_admin/loginpage_wx?from=myhome')
 
 		assert "咩咩羊" == self.driver.find_element_by_class_name('index_info_name').text
-
-
-
-
-
-
-
-
-
-

@@ -20,14 +20,6 @@ class TestJs(Base):
 
 	def test_datetime(self):
 		self.driver.get('https://www.12306.cn/index/')
-		self.driver.execute_script("a=document.getElementById(id='train_date');a.removeAttribute('readonly');a.value='2020-12-12'")
+		self.driver.execute_script(
+			"a=document.getElementById(id='train_date');a.removeAttribute('readonly');a.value='2020-12-12'")
 		sleep(3)
-
-
-
-
-
-
-
-
-
