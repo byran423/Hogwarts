@@ -150,29 +150,29 @@
             * 步骤
                 * 在测试报告里附加网页：
                  * allure.attach(body(内容),name,attachment_type,extension)
-                 * allure.attach('<head></head><body>首页</body>','这是错误页的结果信息',allure.attachment_type.HTML)
+                 *  allure.attach(`'<head></head><body>首页</body>','这是错误页的结果信息',allure.attachment_type.HTML`)
                 * 在测试报告里附加图片：
                     * allure.attah.file(source,name,attachment_type,extension):
                     * allure.attach.file("./result/b.png",attachment_type=allure.attachment_type.PNG)
-                ```
-                @allure.testcase("http://测试用例管理地址")
-                @allure.feature("百度搜索")
-                @pytest.mark.parametrize('test_data1','['allure','pytset','unittest']')
-                def test_step_demo(test_data1):
-                with allure.step("打开百度网页")：
-                    driver = webdriver.Chrome("/webdriver路径")
-                    driver.get("http://www.baidu.com")
-                with allure.step(f"输入搜索词：{test_data1}")
-                    driver.find_element_by_id("kw").send_keys(test_data1)
-                    time.sleep(2)
-                    driver.find_element_by_id("su").click()
-                    time.sleep(2)
-                with allure.step("保存图片")：
-                     driver.save_screenshot("./result/b.png")
-                     allure.attach.file("./result/b.png",attachment_type = allure.attachment_type.PNG)
-                with allure.step("关闭浏览器")：
-                    driver.quit()
-                ```
+                    ```
+                    @allure.testcase("http://测试用例管理地址")
+                    @allure.feature("百度搜索")
+                    @pytest.mark.parametrize('test_data1','['allure','pytset','unittest']')
+                    def test_step_demo(test_data1):
+                        with allure.step("打开百度网页")：
+                            driver = webdriver.Chrome("/webdriver路径")
+                            driver.get("http://www.baidu.com")
+                        with allure.step(f"输入搜索词：{test_data1}")
+                            driver.find_element_by_id("kw").send_keys(test_data1)
+                            time.sleep(2)
+                            driver.find_element_by_id("su").click()
+                            time.sleep(2)
+                        with allure.step("保存图片")：
+                            driver.save_screenshot("./result/b.png")
+                            allure.attach.file("./result/b.png",attachment_type = allure.attachment_type.PNG)
+                        with allure.step("关闭浏览器")：
+                            driver.quit()
+                    ```
         - 特性
             * 功能上加@allure.feature('功能名称')
             * 子功能上加@allure.stroy（‘子功能名称'）

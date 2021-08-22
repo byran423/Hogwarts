@@ -17,7 +17,7 @@ class BasePage():
 			chrome_arg.debugger_address = '127.0.0.1:9222'
 			self.driver = webdriver.Chrome(options=chrome_arg)
 			# 打开首页
-			self.driver.get(self.base_url)
+			self.driver.get(self._base_url)
 		else:
 			# 添加一个WebDriver类型注解，解决类型提示的问题
 			self.driver:WebDriver = best_driver
@@ -26,8 +26,9 @@ class BasePage():
 		self.driver.implicitly_wait(5)
 
 	def find(self, by, locator=None):
-		# 如果只穿入一个元祖参数
+		# 如果只传入一个元祖参数
 		if locator is None:
+			# 元祖解包
 			return self.driver.find_element(*by)
 		# 如果传入正常的两个参数
 		else:

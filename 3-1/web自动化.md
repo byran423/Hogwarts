@@ -23,12 +23,12 @@
             * /bookstore/book[1] 选取属于bookstore子元素的第一个book元素 
             * /bookstore/book[last()] 选取属于bookstore子元素的最后一个book元素
             * /bookstore/book[last()-1] 选取属于bookstore子元素的倒数第二个book元素
-            * //title[@lang='eng'] 选取所有title元素，且其中的price元素的值须大于35.00
+            * //title[@lang='eng'] 选取所有title元素，并且这些元素的拥有值为eng的lang属性 
             * /bookstore/book[price>35.00] 选取bookstore元素的所有book元素，且其中的price元素的值须大于35.00
             * /bookstore/book[price>35.00]/title 选取bookstore元素的所有book元素的所有title元素，且其中的price元素的值须大于35.00
             * nodename 选取此节点的所有子节点
             * / 从根节点选取
-            * // 从匹配选择的当前节点选择文档中的节点，而不考虑塔门的位置
+            * // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置
             * . 选取当前节点
             * .. 选取当前节点的父节点
             * @选取属性
@@ -202,12 +202,12 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 - 复用已有浏览器
     * 复用浏览器：
-        1、需要退出当前所有的Chrome
-        2、找到Chrome的启动路径
-        3、配置 环境变量（windows 把chrome路径加入环境变量）
-        4、 启动命令 win:Google\ Chrome --remote-debugging-port=9222 |mac:/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
-        5、 访问http://localhost:9222 查看服务师傅启用
-        6、 代码里增加
+        1. 需要退出当前所有的Chrome
+        2. 找到Chrome的启动路径
+        3. 配置 环境变量（windows 把chrome路径加入环境变量）
+        4. 启动命令 win:Google\ Chrome --remote-debugging-port=9222 |mac:/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+        5. 访问http://localhost:9222 查看服务是否启用
+        6. 代码里增加
         ```
       chrome_arg = webdriver.ChromeOptions()
         chrome_arg.debugger_address='127.0.0.1:9222'

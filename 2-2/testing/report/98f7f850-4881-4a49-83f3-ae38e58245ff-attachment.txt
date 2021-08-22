@@ -1,4 +1,0 @@
-方法级别的setup
-test demo2
-方法级别的teardown
-类级别的teardown
