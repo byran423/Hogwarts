@@ -5,11 +5,9 @@ from test_app_work_wechat.po.base_page import BasePage
 
 
 class ContactPage(BasePage):
-	ele_add_member=(MobileBy.XPATH,"//*[@text='添加成员']")
+	ele_add_member = (MobileBy.XPATH, "//*[@text='添加成员']")
 
 	def go_to_add_member(self):
-
-
 		'''
 		通讯录页面跳转到添加成员页面
 		:return: 添加成员页面实例
@@ -17,9 +15,8 @@ class ContactPage(BasePage):
 		self.find(self.ele_add_member).click()
 
 		return AddMemberPage(self.driver)
-		# return
 
-
+	# return
 
 	def get_member_list(self):
 		'''
@@ -27,12 +24,3 @@ class ContactPage(BasePage):
 		:return: 返回成员列表
 		'''
 		return []
-
-
-
-
-
-
-
-
-

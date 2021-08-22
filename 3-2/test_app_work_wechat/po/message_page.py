@@ -17,13 +17,4 @@ class MessagePage(BasePage):
 		# self.driver.find_element(MobileBy.XPATH, '//*[@text="通讯录"]')
 		self.find(self.ele_contact).click()
 		return ContactPage(self.driver)
-		# return
-
-
-
-
-
-
-
-
-
+	# return

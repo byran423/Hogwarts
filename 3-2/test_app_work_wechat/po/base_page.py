@@ -1,12 +1,13 @@
 from appium import webdriver
 from appium.webdriver.webdriver import WebDriver
 
-class BasePage():
 
+class BasePage():
 	'''
 	提供公共方法封装，即和页面无关的逻辑
 	'''
-	def __init__(self,best_driver=None):
+
+	def __init__(self, best_driver=None):
 		# 如果首次初始化，新建一个Webdriver
 		if best_driver is None:
 			desire_cap = {
@@ -25,23 +26,13 @@ class BasePage():
 
 		# 已经有Webdriver，不用再初始化
 		else:
-			self.driver:WebDriver = best_driver
+			self.driver: WebDriver = best_driver
 		self.driver.implicitly_wait(10)
 
 	def find(self, by, locator=None):
 		if locator is None:
 			# 如果入参是元祖(by, '')形式，解包
 			return self.driver.find_element(*by)
-			# 普通形式传参
+		# 普通形式传参
 		else:
 			return self.driver.find_element(by, value=locator)
-
-
-
-
-
-
-
-
-
-

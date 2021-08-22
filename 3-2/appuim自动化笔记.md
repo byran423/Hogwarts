@@ -156,7 +156,7 @@ def test_touchaction(self):
     * 显示等待在客户端，隐式等待在服务端
     * 隐式等待在整个session生命周期生效，显示等待在写了显示等待的地方生效
 * 为什么要显示等待
-    * 显示等待可以等待动态加载的ajax元素，显示等待需要使ExpectCo nditions来检查条件
+    * 显示等待可以等待动态加载的ajax元素，显示等待需要使ExpectConditions来检查条件
 * toast 定位
     * appium使用uiautomator底层的机制来分析抓取toast，并且把toast放到控件树里面，但本身并不属于控件
     * automationName：uiautomator2

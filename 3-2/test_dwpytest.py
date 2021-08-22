@@ -42,15 +42,3 @@ class TestDwpytest():
 		self.driver.implicitly_wait(5)
 		current_price = float(self.driver.find_element_by_id('com.xueqiu.android:id/current_price').text)
 		assert 200 < current_price
-
-
-
-
-
-
-
-
-
-
-
-
