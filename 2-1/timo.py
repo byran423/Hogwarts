@@ -1,4 +1,4 @@
-from test_hero.hero import Hero
+from hero import Hero
 
 
 class Timo(Hero):

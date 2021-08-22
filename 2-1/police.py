@@ -1,5 +1,5 @@
-from test_hero.hero import Hero
-from test_hero.timo import Timo
+from hero import Hero
+from timo import Timo
 
 
 class Police(Hero):

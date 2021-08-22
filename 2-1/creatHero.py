@@ -1,8 +1,8 @@
-from test_hero.ez import EZ
-from test_hero.hero import Hero
-from test_hero.jinx import Jinx
-from test_hero.police import Police
-from test_hero.timo import Timo
+from ez import EZ
+from hero import Hero
+from jinx import Jinx
+from police import Police
+from timo import Timo
 
 
 class CreatHero(Hero):
