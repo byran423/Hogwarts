@@ -86,11 +86,11 @@
     * 获取需要的值
     * 将获取到的值设置为环境变量
     * 在需要验证的接口中引用环境变量中保存的值
-```
-var jsonData = pm.response.json();
-var token = jsonData.json.token;
-pm.environment.set("token":token)
-```    
+    ```
+    var jsonData = pm.response.json();
+    var token = jsonData.json.token;
+    pm.environment.set("token":token)
+    ```    
     
 * 用例集    
     * 选择环境变量
