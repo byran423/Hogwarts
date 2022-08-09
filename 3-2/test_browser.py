@@ -1,3 +1,4 @@
+import json
 from time import sleep
 
 from appium import webdriver
@@ -21,3 +22,7 @@ class TestBrowser():
 	def test_browser(self):
 		self.driver.get('http://m.baidu.com')
 		sleep(5)
+
+
+json.dump()
+

@@ -1,7 +1,7 @@
 ## Docker 常用命令
 #### 基本命令
-docker version
-docker info
+1. docker version 
+2. docker info
 #### 镜像管理
 * 查看所有镜像：docker images
 * 搜索镜像：docker search nginx
